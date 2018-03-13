@@ -7,7 +7,6 @@ npm_packages=(
 	babel-preset-react
 	babel-preset-stage-0
 	babel-register
-	bower
 	cost-of-modules
 	create-react-app
 	create-react-native-app
@@ -17,6 +16,7 @@ npm_packages=(
 	hpm-cli
 	iectrl
 	jscodeshift
+	n
 	nodemon
 	npm-check-updates
 	npm-consider
