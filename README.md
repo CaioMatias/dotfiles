@@ -1,13 +1,16 @@
-# Gil's dotfiles & setup
+# Caio's dotfiles & setup
+
+Forked from [Gil's](https://github.com/gilbarbara/dotfiles), thanks dude.
 
 [Mathias's readme](https://github.com/mathiasbynens/dotfiles/) is awesome. go read it.
 
 This is a mashup between [Paul Irish's dotfiles](https://github.com/paulirish/dotfiles) and [Raúl Uranga's powerbook](https://github.com/rauluranga/powerbook).
+
 This repo is mostly for me but you're welcome to make suggestions. Fork it!
 
 ## install the necessary apps
 
-The basic setup is executed in `install.sh` which adds a ton of stuff: [brew](https://github.com/gilbarbara/dotfiles/blob/master/lib/brew) (node, php, mongo, mysql, python, ruby), [cask](https://github.com/gilbarbara/dotfiles/blob/master/lib/apps) and some [gems](https://github.com/gilbarbara/dotfiles/blob/master/lib/rubygems), [npm global packages](https://github.com/gilbarbara/dotfiles/blob/master/lib/npm) and more.
+The basic setup is executed in `install.sh` which adds a ton of stuff: [brew](https://github.com/caiomatias/dotfiles/blob/master/lib/brew) (node, php, mongo, mysql, python, ruby), [cask](https://github.com/caiomatias/dotfiles/blob/master/lib/apps) and some [gems](https://github.com/caiomatias/dotfiles/blob/master/lib/rubygems), [npm global packages](https://github.com/caiomatias/dotfiles/blob/master/lib/npm) and more.
 
 ## private config
 
@@ -65,7 +68,7 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ## Installation
 
 ```bash
-git clone https://github.com/gilbarbara/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
+git clone https://github.com/caiomatias/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
 ```
 
 Also you can install the modules individually

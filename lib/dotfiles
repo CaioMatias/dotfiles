@@ -5,9 +5,9 @@ dotfiles=(.ackrc .aliases .bash_colors .bash_profile .bash_prompt .bashrc .edito
 # Install dotfiles
 run_dotfiles() {
 	for i in "${dotfiles[@]}"; do
-		if [[ "$i" == ".gitconfig" && -f ~/.gitconfig && "$USER" != "gilbarbara" ]]; then
+		if [[ "$i" == ".gitconfig" && -f ~/.gitconfig && "$USER" != "caiomatias" ]]; then
 			e_warning ".gitconfig already exists, do it manually"
-		elif [[ "$i" == ".npmrc" && -f ~/.npmrc && "$USER" != "gilbarbara" ]]; then
+		elif [[ "$i" == ".npmrc" && -f ~/.npmrc && "$USER" != "caiomatias" ]]; then
 			e_warning ".npmrc already exists, do it manually"
 		else
 			rm -rf ~/$i

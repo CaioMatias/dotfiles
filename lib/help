@@ -19,7 +19,7 @@ Options:
     sublime			Install basic plugins and preferences
     tools			Install bash tools
 
-Documentation can be found at https://github.com/gilbarbara/dotfiles
+Documentation can be found at https://github.com/caiomatias/dotfiles
 
 EOT
 }

@@ -44,11 +44,11 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-[url "git@github.com:gilbarbara/"]
-  insteadOf = "git://github.com/gilbarbara/"
+[url "git@github.com:caiomatias/"]
+  insteadOf = "git://github.com/caiomatias/"
 [user]
-	name = Gil Barbara
-	email = gilbarbara@gmail.com
+	name = Caio Matias
+	email = caiobellomatias@gmail.com
 [filter "media"]
 	required = true
 	clean = git media clean %f
