@@ -1,16 +1,14 @@
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_colors,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{bash_colors,bash_completion,bash_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
 
-if hash fasd 2>/dev/null; then
-	eval "$(fasd --init auto)"
-	_fasd_bash_hook_cmd_complete sb
-fi
+# Set ulimit per session
+ulimit -n 200000
+ulimit -u 2048
 
-eval $(thefuck --alias)
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -32,26 +30,42 @@ export NVM_SYMLINK_CURRENT=true
 source $(brew --prefix nvm)/nvm.sh
 
 # Ruby paths
+export RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
 export GEM_HOME="$(brew --prefix)/opt/gems"
 export GEM_PATH="$GEM_HOME/bin"
 
-# init brew
-PATH=/usr/local/sbin:$PATH
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH=$GEM_PATH:$PATH
-PATH="$PATH:./node_modules/.bin"
+# PHP path
+export PHP_PATH="$(brew --prefix)/opt/php/bin"
 
+# init brew
+PATH="./node_modules/.bin:$PATH"
+PATH="$(brew --prefix)/sbin:$PATH"
+PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+PATH="$PHP_PATH:$PATH"
+PATH="$RUBY_PATH:$PATH"
+PATH="$GEM_PATH:$PATH"
+
+if hash fasd 2>/dev/null; then
+	eval "$(fasd --init auto)"
+	_fasd_bash_hook_cmd_complete sb
+fi
+
+eval $(thefuck --alias)
 
 eval "$(hub alias -s)"
-
-eval "$(gulp --completion=bash)"
 
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
 	. $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
-# added by travis gem
+eval "$(gulp --completion=bash)"
+
+# travis
 [ -f /Users/caiomatias/.travis/travis.sh ] && source /Users/caiomatias/.travis/travis.sh
 
-# Increase ulimit
-ulimit -n 2048
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash

@@ -5,28 +5,31 @@ run_apps() {
 	# utils
 	brew cask install alfred
 	brew cask install dropbox
-	brew cask install google-drive
-	brew cask install istat-menus
+	brew cask install google-backup-and-sync
+	brew cask install istat-menusq
 	brew cask install the-unarchiver
 	brew cask install vlc
 
 	# dev
-	brew cask install dockertoolbox
+	brew cask install docker
 	brew cask install firefox
 	brew cask install github
 	brew cask install google-chrome
+	brew cask install graphql-playground
 	brew cask install hyper
 	brew cask install imageoptim
 	brew cask install ksdiff # Kaleidoscope command line
 	brew cask install pngyu
-	brew cask install transmit
+	brew cask install postman
 	brew cask install tower
+	brew cask install transmit
 	brew cask install virtualbox
 	brew cask install visual-studio-code
 
 	# personal
 	brew cask install franz
-	brew cask install spotify
 	brew cask install plex-media-server
+	brew cask install rocket
+	brew cask install spotify
 
 }

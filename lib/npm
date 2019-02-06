@@ -1,22 +1,30 @@
 #!/usr/bin/env bash
 
 npm_packages=(
+	@babel/core
+	@babel/cli
+	@babel/node
+	@babel/preset-env
+	@babel/preset-react
+	@babel/register
 	@sanity/cli
-	babel-cli
-	babel-preset-env
-	babel-preset-react
-	babel-preset-stage-0
-	babel-register
-	cost-of-modules
+	@storybook/cli
+	aws-sam-local
+	babel-upgradead
+	bower
+	codesandbox
+	create-next-app
 	create-react-app
 	create-react-native-app
-	flow-typed
+	dotenv
+	eslint
+	flow-bin
+	gatsby-cli
+	gitbook-cli
 	github-labels
 	gulp
-	hpm-cli
 	iectrl
 	jscodeshift
-	n
 	nodemon
 	npm-check-updates
 	npm-consider
@@ -30,10 +38,13 @@ npm_packages=(
 	react-native-cli
 	release
 	serve
+	serverless
 	source-map-explorer
 	surge
 	svgo
 	tldr
+	vorlon
+	watch-run
 	webpack-bundle-analyzer
 	yarn
 )
