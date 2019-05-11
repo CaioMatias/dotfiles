@@ -9,6 +9,8 @@ run_apps() {
 	brew cask install dropbox
 	brew cask install keka
 	brew cask install vlc
+	brew cask install sketch
+	brew cask install unshaky
 
 	# dev
 	brew cask install docker
