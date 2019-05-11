@@ -3,11 +3,11 @@
 # Install native apps
 run_apps() {
 	# utils
-	brew cask install alfred
+	# brew cask alfred
+	# brew cask transmit
+	# brew cask istats-menus
 	brew cask install dropbox
-	brew cask install google-backup-and-sync
-	brew cask install istat-menusq
-	brew cask install the-unarchiver
+	brew cask install keka
 	brew cask install vlc
 
 	# dev
@@ -21,15 +21,12 @@ run_apps() {
 	brew cask install ksdiff # Kaleidoscope command line
 	brew cask install pngyu
 	brew cask install postman
-	brew cask install tower
-	brew cask install transmit
 	brew cask install virtualbox
 	brew cask install visual-studio-code
 
 	# personal
 	brew cask install franz
 	brew cask install plex-media-server
-	brew cask install rocket
 	brew cask install spotify
 
 }

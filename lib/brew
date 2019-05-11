@@ -76,10 +76,6 @@ run_brew() {
 	brew install wget --with-iri
 	brew install wp-cli
 
-	# Install code review tools
-	brew tap codeclimate/formulae
-	brew install codeclimate
-
 	# Remove outdated versions from the cellar
 	brew cleanup
 }

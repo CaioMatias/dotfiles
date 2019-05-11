@@ -46,7 +46,6 @@ npm_packages=(
 	vorlon
 	watch-run
 	webpack-bundle-analyzer
-	yarn
 )
 
 # Install node packages
