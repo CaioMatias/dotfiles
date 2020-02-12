@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-libs=(apps binaries brew dotfiles fonts npm quicklook rubygems sublime tools)
+libs=(apps binaries brew dotfiles fonts npm quicklook rubygems tools)
 
 # Help text
 source ./lib/help

@@ -10,7 +10,7 @@ npm_packages=(
 	@sanity/cli
 	@storybook/cli
 	aws-sam-local
-	babel-upgradead
+	babel-upgrade
 	bower
 	codesandbox
 	create-next-app

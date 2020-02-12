@@ -1,0 +1,7 @@
+## PATH like a boss
+PATH=/opt/local/bin
+PATH=$PATH:/opt/local/sbin
+PATH=$PATH:/bin
+PATH=$PATH:~/.rvm/bin
+
+export PATH

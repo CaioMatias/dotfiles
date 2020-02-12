@@ -1,14 +1,9 @@
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_colors,bash_completion,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{bash_colors,bash_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
-
-# Set ulimit per session
-ulimit -n 200000
-ulimit -u 2048
-
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -25,9 +20,8 @@ export LANG="en_US"
 complete -W "NSGlobalDomain" defaults
 
 # init nvm
-export NVM_DIR=/usr/local/nvm
-export NVM_SYMLINK_CURRENT=true
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Ruby paths
 export RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
