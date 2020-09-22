@@ -41,8 +41,6 @@ echo "Setting environment variables for machine $VM..."
 clear
 
 cat << EOF
-
-
                         ##         .
                   ## ## ##        ==
                ## ## ## ## ##    ===
@@ -51,8 +49,6 @@ cat << EOF
            \______ o           __/
              \    \         __/
               \____\_______/
-
-
 EOF
 echo -e "${BLUE}docker${NC} is configured to use the ${GREEN}$VM${NC} machine with IP ${GREEN}$($DOCKER_MACHINE ip $VM)${NC}"
 echo "For help getting started, check out the docs at https://docs.docker.com"

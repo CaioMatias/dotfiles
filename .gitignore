@@ -40,6 +40,7 @@ bower_components
 
 # Logs and databases #
 ######################
+.env
 log/
 *.log
 *.sql
@@ -70,6 +71,9 @@ xcuserdata/
 
 # Sensitive data
 .npmrc
+.config/configstore
+.config/hub
+.config/gatsby
 
 # OS generated files #
 ######################
@@ -78,6 +82,5 @@ xcuserdata/
 thumbs.db
 Desktop.ini
 # REMINDER: do not edit Icon^M^M Carriage Returns
-Icon[
-]
+Icon[]
 #REMINDER

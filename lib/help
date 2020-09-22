@@ -3,8 +3,6 @@
 run_help() {
 
 cat <<EOT
-
-
 Options:
     -h, --help		Print this help text
     --no-log		Suppress verbose logging
@@ -17,8 +15,6 @@ Options:
     quicklook		Install QL plugins
     ruby			Install gems
     tools			Install bash tools
-
 Documentation can be found at https://github.com/caiomatias/dotfiles
-
 EOT
 }

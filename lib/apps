@@ -3,32 +3,30 @@
 # Install native apps
 run_apps() {
 	# utils
-	# brew cask alfred
-	# brew cask transmit
-	# brew cask istats-menus
+	brew cask install adobe-creative-cloud
 	brew cask install dropbox
-	brew cask install keka
+	brew cask install firefox
+	brew cask install google-chrome
+	brew cask install the-unarchiver
+	brew cask install slack
+	brew cask install spotify
+	brew cask install typora
 	brew cask install vlc
-	brew cask install sketch
-	brew cask install unshaky
 
 	# dev
+	brew cask install coderunner
 	brew cask install docker
-	brew cask install firefox
 	brew cask install github
-	brew cask install google-chrome
+	brew cask install gitkraken
 	brew cask install graphql-playground
+	brew cask install insomnia
 	brew cask install hyper
 	brew cask install imageoptim
 	brew cask install ksdiff # Kaleidoscope command line
+	brew cask install kitematic
+	brew cask install now
 	brew cask install pngyu
 	brew cask install postman
 	brew cask install virtualbox
 	brew cask install visual-studio-code
-
-	# personal
-	brew cask install franz
-	brew cask install plex-media-server
-	brew cask install spotify
-
 }

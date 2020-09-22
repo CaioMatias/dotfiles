@@ -1,6 +1,6 @@
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_colors,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{bash_colors,bash_completion,bash_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -12,6 +12,8 @@ shopt -s nocaseglob
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+export GPG_TTY=$(tty)
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
@@ -20,8 +22,9 @@ export LANG="en_US"
 complete -W "NSGlobalDomain" defaults
 
 # init nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR=/usr/local/nvm
+export NVM_SYMLINK_CURRENT=true
+source $(brew --prefix nvm)/nvm.sh
 
 # Ruby paths
 export RUBY_PATH="$(brew --prefix)/opt/ruby/bin"
@@ -44,15 +47,14 @@ if hash fasd 2>/dev/null; then
 	_fasd_bash_hook_cmd_complete sb
 fi
 
-eval $(thefuck --alias)
+eval "$(gulp --completion=bash)"
 
 eval "$(hub alias -s)"
 
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-	. $(brew --prefix)/share/bash-completion/bash_completion
-fi
+eval $(thefuck --alias)
 
-eval "$(gulp --completion=bash)"
+export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # travis
 [ -f /Users/caiomatias/.travis/travis.sh ] && source /Users/caiomatias/.travis/travis.sh
@@ -63,3 +65,5 @@ eval "$(gulp --completion=bash)"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

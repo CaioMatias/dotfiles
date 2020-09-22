@@ -26,18 +26,14 @@ reset=`echo -e '\033[39m'`
 # usage info
 function usage {
   cat <<EOF
-
   Usage: search [options] [directory] [term ...]
-
   Options:
-
     -s, --sensitive         Force case sensitive search.
     -i, --insensitive       Force case insensitive search.
 		-d, --max-depth					  Limit recursion
     -C, --no-colors         Force avoid colors.
     -L, --no-linenums       Hide line numbers.
     -h, --help              This message.
-
 EOF
 }
 

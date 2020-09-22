@@ -1,6 +1,7 @@
 [alias]
 	br = branch
 	c = commit -am
+	ci = ci-status
 	co = checkout
 	cp = cherry-pick
 	df = diff --color --color-words --abbrev
@@ -11,7 +12,9 @@
 	ll = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --numstat
 	ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	open = browse
+	prune = fetch --prune
 	s = status -s
+	undo = reset --soft HEAD^
 	up = push
 [color]
 	ui = always
@@ -32,6 +35,11 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[commit]
+	# "people can trust that the changes you've made really were made by you"
+  # https://help.github.com/articles/about-gpg/
+  # https://git-scm.com/docs/git-config#git-config-commitgpgSign
+  gpgSign = true
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -44,7 +52,6 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-
 [url "git@github.com:caiomatias/"]
   insteadOf = "git://github.com/caiomatias/"
 [user]
@@ -57,14 +64,24 @@
 [credential]
 	helper = osxkeychain
 [push]
+	# "push the current branch back to the branch whose changes are usually integrated into the current branch"
+  # "refuse to push if the upstream branch’s name is different from the local one"
+  # https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
 [diff]
-	tool = kaleidoscope
+	algorithm = patience
 [difftool]
 	prompt = false
 [difftool "kaleidoscope"]
 	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
 [merge]
+  # I pretty much never mean to do a real merge, since I use a rebase workflow.
+  # Note: this global option applies to all merges, including those done during a git pull
+  # https://git-scm.com/docs/git-config#git-config-mergeff
+	ff = only
+	# Standard diff is two sets of final changes. This introduces the original text before each side's changes.
+  # https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
+  conflictstyle = diff3
 	log = true
 	tool = kaleidoscope
 [mergetool]
@@ -81,3 +98,7 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+[tag]
+	sort = version:refname
+[pull]
+	rebase = true
