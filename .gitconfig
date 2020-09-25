@@ -39,7 +39,7 @@
 	# "people can trust that the changes you've made really were made by you"
   # https://help.github.com/articles/about-gpg/
   # https://git-scm.com/docs/git-config#git-config-commitgpgSign
-  gpgSign = true
+  gpgSign = false
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -55,7 +55,7 @@
 [url "git@github.com:caiomatias/"]
   insteadOf = "git://github.com/caiomatias/"
 [user]
-	name = caiomatias
+	name = Caio Matias
 	email = caiobellomatias@gmail.com
 [filter "media"]
 	required = true
