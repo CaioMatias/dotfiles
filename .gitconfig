@@ -55,7 +55,7 @@
 [url "git@github.com:caiomatias/"]
   insteadOf = "git://github.com/caiomatias/"
 [user]
-	name = Caio Matias
+	name = caiomatias
 	email = caiobellomatias@gmail.com
 [filter "media"]
 	required = true

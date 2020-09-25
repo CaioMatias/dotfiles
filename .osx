@@ -384,31 +384,6 @@ defaults write com.google.Chrome ExtensionInstallSources -array "https://*.githu
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*"
 
 ###############################################################################
-# Transmission.app                                                            #
-###############################################################################
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
-###############################################################################
-# Sketch.app                                                                 #
-###############################################################################
-
-# Remove Sketch metadata from SVG files
-defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
-
-# Don't use the name of the layer for the id field of the layer in SVG export
-defaults write com.bohemiancoding.sketch3 svgExportSkipAssignIdToLayerName -bool yes
-
-###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

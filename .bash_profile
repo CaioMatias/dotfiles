@@ -22,7 +22,7 @@ export GPG_TTY=$(tty)
 complete -W "NSGlobalDomain" defaults
 
 # init nvm
-export NVM_DIR=/usr/local/nvm
+export NVM_DIR="$HOME/.nvm"
 export NVM_SYMLINK_CURRENT=true
 source $(brew --prefix nvm)/nvm.sh
 
